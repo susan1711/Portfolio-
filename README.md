@@ -1,3 +1,13 @@
+## 📚 Project Documentation
+
+Read the documentation in the following order:
+
+1. README.md – Project overview
+2. PRD.md – Product vision and requirements
+3. DESIGN_SYSTEM.md – Design principles and visual language
+4. AI_RULES.md – Development guidelines for AI assistants
+5. ROADMAP.md – Planned milestones and future improvements
+
 # 🚀 Personal Portfolio
 
 > A modern, data-driven portfolio built to showcase my experience as a Shopify Developer through real projects, case studies, and technical expertise.
