@@ -86,7 +86,7 @@ export function About() {
                 {aboutContent.stats.map((stat, index) => (
                   <motion.div
                     animate={animate}
-                    className="min-h-32 bg-card p-5 sm:p-6"
+                    className="min-h-32 bg-card p-5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md sm:p-6"
                     initial={initial}
                     key={stat.label}
                     transition={{ ...transition, delay: shouldReduceMotion ? 0 : 0.24 + index * 0.06 }}

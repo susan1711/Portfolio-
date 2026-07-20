@@ -8,7 +8,7 @@ export const contactContent = {
   eyebrow: "Let's Connect",
   heading: "Have a project in mind? Let's build something together.",
   description:
-    "Whether you're looking for a Shopify developer for your agency, need help with a store, or just want to say hello—I'd love to hear from you.",
+    "Whether you are looking for a Shopify developer for your agency, need help with a store, or simply want to connect—I would love to hear from you.",
   availability: "Available for select opportunities",
   email: "hello@sudharsan.dev",
   location: "Chennai, India",

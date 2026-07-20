@@ -6,7 +6,7 @@ function Card({ className, ...props }: ComponentPropsWithoutRef<"div">) {
   return (
     <div
       className={cn(
-        "rounded-3xl border border-border bg-card text-card-foreground shadow-[0_1px_2px_rgba(17,24,39,0.04)] transition-[border-color,box-shadow,transform] duration-200 dark:shadow-none",
+        "rounded-3xl border border-border bg-card text-card-foreground shadow-[0_1px_2px_rgba(17,24,39,0.04)] transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-[0_8px_24px_rgba(17,24,39,0.06)] dark:shadow-none dark:hover:border-primary/20 dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)]",
         className,
       )}
       {...props}

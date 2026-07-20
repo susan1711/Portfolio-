@@ -76,18 +76,18 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
                 >
                   {project.name}
                 </h2>
-                <Badge variant="default">{project.industry}</Badge>
+                <Badge className="mt-1" variant="default">{project.industry}</Badge>
               </div>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-muted-foreground">
                 {project.overview}
               </p>
             </MotionBlock>
 
-            <MotionBlock className="mt-8 overflow-hidden rounded-3xl border border-border bg-card" delay={0.08}>
+            <MotionBlock className="group mt-8 overflow-hidden rounded-3xl border border-border bg-card transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-lg" delay={0.08}>
               <div className="aspect-[4/3] overflow-hidden bg-muted">
                 <Image
                   alt={`${project.name} project preview`}
-                  className="size-full object-cover"
+                  className="size-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                   height={900}
                   src={project.image}
                   width={1200}
@@ -113,11 +113,11 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
             </MotionBlock>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-8">
             <MotionBlock className="grid gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-2">
               {stats.map((stat) => (
-                <div className="min-h-32 bg-card p-6" key={stat.label}>
-                  <p className="text-sm leading-5 text-muted-foreground">{stat.label}</p>
+                <div className="min-h-32 bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md" key={stat.label}>
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">{stat.label}</p>
                   <p className="mt-3 font-heading text-2xl font-semibold tracking-[-0.04em] text-foreground">
                     {stat.value}
                   </p>
@@ -125,8 +125,8 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
               ))}
             </MotionBlock>
 
-            <MotionBlock className="rounded-3xl border border-border bg-card p-6 sm:p-8" delay={0.08}>
-              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary">
+            <MotionBlock className="rounded-3xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-md sm:p-8" delay={0.08}>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
                 Client goal
               </p>
               <p className="mt-4 text-base leading-7 text-muted-foreground">{project.clientGoal}</p>
@@ -137,8 +137,8 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
               <ProjectList title="Features" items={project.features} />
             </MotionBlock>
 
-            <MotionBlock className="rounded-3xl border border-border bg-card p-6 sm:p-8" delay={0.16}>
-              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary">
+            <MotionBlock className="rounded-3xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-md sm:p-8" delay={0.16}>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
                 Technologies
               </p>
               <div className="mt-5 flex flex-wrap gap-2">

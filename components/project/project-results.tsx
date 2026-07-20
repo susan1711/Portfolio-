@@ -96,7 +96,7 @@ export function ProjectResults({ project }: ProjectResultsProps) {
 
               return (
                 <div
-                  className="rounded-3xl border border-border bg-card p-6 transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md sm:p-8"
+                  className="group rounded-3xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md sm:p-8"
                   key={item.key}
                 >
                   <Icon

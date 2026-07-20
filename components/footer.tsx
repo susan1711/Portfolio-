@@ -16,11 +16,12 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border bg-background">
+      <div aria-hidden="true" className="mx-auto h-px max-w-7xl bg-gradient-to-r from-transparent via-border to-transparent" />
       <Container className="py-12 sm:py-16" size="content">
         <div className="flex flex-col items-center gap-8 sm:gap-10">
           <a
             aria-label="Back to top"
-            className="inline-flex size-10 items-center justify-center rounded-xl border border-border text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="inline-flex size-10 items-center justify-center rounded-xl border border-border text-muted-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-secondary hover:text-foreground hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             href="#home"
             onClick={(e) => {
               e.preventDefault();
@@ -33,7 +34,7 @@ export function Footer() {
           <nav aria-label="Footer navigation" className="flex flex-wrap justify-center gap-6">
             {homeContent.navigation.map((item) => (
               <a
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 href={item.href}
                 key={item.href}
               >
@@ -42,18 +43,18 @@ export function Footer() {
             ))}
           </nav>
 
-          <div className="flex gap-4">
+          <div className="flex gap-6">
             {contactContent.socials.map((social) => (
               <a
                 aria-label={social.ariaLabel}
-                className="text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="group inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-all duration-200 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 href={social.href}
                 key={social.label}
                 rel="noreferrer"
                 target="_blank"
               >
                 {social.label}
-                <ExternalLink aria-hidden="true" className="ml-0.5 inline size-3" />
+                <ExternalLink aria-hidden="true" className="size-3 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
             ))}
           </div>

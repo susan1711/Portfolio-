@@ -15,7 +15,11 @@ export function Hero() {
   const animate = { opacity: 1, y: 0 };
 
   return (
-    <main id="home">
+    <main className="relative overflow-hidden" id="home">
+      {/* Decorative gradient orbs */}
+      <div aria-hidden="true" className="glow-dot -left-32 -top-32 size-96 opacity-60 dark:opacity-40" />
+      <div aria-hidden="true" className="glow-dot -bottom-48 -right-32 size-80 opacity-40 dark:opacity-30" />
+
       <Container
         className="flex min-h-[calc(100svh-5.75rem)] items-center py-20 sm:py-24 lg:py-28"
         size="page"
@@ -23,7 +27,7 @@ export function Hero() {
         <div className="max-w-4xl">
           <motion.div animate={animate} initial={initial} transition={transition}>
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1.5 text-xs font-medium text-foreground">
-              <span aria-hidden="true" className="size-1.5 rounded-full bg-primary" />
+              <span aria-hidden="true" className="pulse-dot size-1.5 rounded-full bg-primary" />
               {homeContent.hero.availability}
             </span>
           </motion.div>

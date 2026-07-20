@@ -77,7 +77,7 @@ export function ProjectOverview({ project }: ProjectOverviewProps) {
             <div className="mt-4 flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
                 <span
-                  className="inline-flex items-center rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium text-foreground"
+                  className="inline-flex items-center rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:bg-primary/5 hover:shadow-sm"
                   key={tech}
                 >
                   {tech}
@@ -91,7 +91,7 @@ export function ProjectOverview({ project }: ProjectOverviewProps) {
             <ul className="mt-4 grid gap-3 sm:grid-cols-2">
               {project.features.map((feature) => (
                 <li
-                  className="flex items-center gap-3 rounded-2xl border border-border bg-card p-4 text-sm leading-6 text-muted-foreground"
+                  className="flex items-center gap-3 rounded-2xl border border-border bg-card p-4 text-sm leading-6 text-muted-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-sm"
                   key={feature}
                 >
                   <CheckCircle2 aria-hidden="true" className="size-4 shrink-0 text-primary" />
@@ -101,14 +101,14 @@ export function ProjectOverview({ project }: ProjectOverviewProps) {
             </ul>
           </MotionBlock>
 
-          <MotionBlock className="rounded-3xl border border-border bg-card p-6 sm:p-8" delay={0.14}>
+          <MotionBlock className="rounded-3xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-md sm:p-8" delay={0.14}>
             <SectionLabel>Challenge</SectionLabel>
             <Typography className="mt-3" variant="body">
               {project.challenge}
             </Typography>
           </MotionBlock>
 
-          <MotionBlock className="rounded-3xl border border-border bg-card p-6 sm:p-8" delay={0.18}>
+          <MotionBlock className="rounded-3xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-md sm:p-8" delay={0.18}>
             <SectionLabel>Solution</SectionLabel>
             <Typography className="mt-3" variant="body">
               {project.solution}

@@ -120,6 +120,32 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+/* ── Subtle fixed noise texture ── */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* ── Subtle ambient gradient orbs ── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 90% 50% at 50% -15%, color-mix(in srgb, var(--primary) 10%, transparent), transparent),
+    radial-gradient(ellipse 50% 60% at 85% 40%, color-mix(in srgb, var(--primary) 6%, transparent), transparent),
+    radial-gradient(ellipse 50% 60% at 15% 60%, color-mix(in srgb, var(--primary) 5%, transparent), transparent);
+}
+
 body {
   min-height: 100vh;
   background: var(--background);
@@ -146,6 +172,53 @@ h6 {
 ::selection {
   background: color-mix(in srgb, var(--primary) 35%, transparent);
   color: var(--foreground);
+}
+
+/* ── Decorative utilities ── */
+.glow-dot {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--primary) 25%, transparent) 0%, transparent 70%);
+  filter: blur(8px);
+}
+
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border), transparent);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-dot {
+    animation: none;
+  }
+}
+
+.card-glow {
+  position: relative;
+}
+.card-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--primary) 10%, transparent), transparent 60%);
+  pointer-events: none;
+}
+.card-glow:hover::before {
+  opacity: 1;
 }
 
 :focus-visible {

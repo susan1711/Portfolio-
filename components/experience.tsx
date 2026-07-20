@@ -60,29 +60,30 @@ export function Experience() {
         <div className="relative mt-16 lg:mt-20">
           <div
             aria-hidden="true"
-            className="absolute bottom-0 left-[1.375rem] top-0 hidden w-px bg-border lg:block"
+            className="absolute bottom-0 left-[1.375rem] top-0 hidden bg-gradient-to-b from-primary/40 via-border to-transparent lg:block"
+            style={{ width: "1px" }}
           />
 
           <div className="space-y-10 lg:space-y-16">
             {experienceContent.items.map((item, index) => (
-              <div className="relative flex flex-col gap-6 lg:flex-row lg:gap-8" key={item.id}>
+              <div className="group relative flex flex-col gap-6 lg:flex-row lg:gap-8" key={item.id}>
                 <div className="hidden lg:flex lg:relative lg:z-10 lg:w-14 lg:shrink-0 lg:items-start lg:justify-center lg:pt-1">
                   <motion.div
                     animate={{ scale: 1, opacity: 1 }}
-                    className="relative flex size-7 items-center justify-center rounded-full border-2 border-border bg-background"
+                    className="relative flex size-7 items-center justify-center rounded-full border-2 border-border bg-background transition-colors duration-200 group-hover:border-primary/50 group-hover:bg-primary/5"
                     initial={shouldReduceMotion ? false : { scale: 0, opacity: 0 }}
                     transition={{
                       ...transition,
                       delay: shouldReduceMotion ? 0 : 0.3 + index * 0.1,
                     }}
                   >
-                    <span className="size-2 rounded-full bg-primary" />
+                    <span className="size-2.5 rounded-full bg-primary transition-transform duration-200 group-hover:scale-125" />
                   </motion.div>
                 </div>
 
                 <div className="flex-1">
                   <MotionBlock delay={0.1 + index * 0.1}>
-                    <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-[0_1px_2px_rgba(17,24,39,0.04)] transition-[border-color,box-shadow,transform] duration-200 dark:shadow-none">
+                    <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-[0_1px_2px_rgba(17,24,39,0.04)] transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-[0_8px_24px_rgba(17,24,39,0.06)] dark:shadow-none dark:hover:border-primary/20 dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)]">
                       <div className="p-6 sm:p-8">
                         <div className="flex flex-wrap items-start justify-between gap-4">
                           <div>

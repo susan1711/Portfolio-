@@ -57,18 +57,18 @@ export function Skills() {
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">
           {skillsContent.categories.map((category, index) => (
             <MotionBlock
-              className="group rounded-3xl border border-border bg-card p-6 shadow-[0_1px_2px_rgba(17,24,39,0.04)] transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[0_8px_24px_rgba(17,24,39,0.06)] dark:shadow-none dark:hover:border-primary/30 dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
+              className="group relative rounded-3xl border border-border bg-card p-6 shadow-[0_1px_2px_rgba(17,24,39,0.04)] transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[0_8px_24px_rgba(17,24,39,0.06)] dark:shadow-none dark:hover:border-primary/30 dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
               delay={0.08 + index * 0.06}
               key={category.id}
             >
-              <div>
+              <div className="relative">
                 <h3 className="font-heading text-lg font-semibold tracking-[-0.03em] text-foreground">
                   {category.name}
                 </h3>
-                <div className="mt-5 flex flex-wrap gap-2">
+                <div className="mt-5 flex flex-wrap gap-1.5">
                   {category.skills.map((skill) => (
                     <Badge
-                      className="transition-colors duration-200 group-hover:border-primary/30 group-hover:bg-primary/5"
+                      className="transition-all duration-200 group-hover:border-primary/30 group-hover:bg-primary/5"
                       key={skill}
                       variant="secondary"
                     >
@@ -80,7 +80,7 @@ export function Skills() {
 
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
               >
                 <div className="absolute -right-20 -top-20 size-40 rounded-full bg-primary/5 blur-3xl" />
                 <div className="absolute -bottom-20 -left-20 size-40 rounded-full bg-primary/5 blur-3xl" />

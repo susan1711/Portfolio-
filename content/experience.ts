@@ -13,7 +13,7 @@ export interface ExperienceItem {
 
 export const experienceContent = {
   eyebrow: "Experience",
-  title: "Where I've worked",
+  title: "Where I have worked",
   description:
     "My journey building Shopify experiences across agencies and freelance collaborations.",
   totalYears: "2+",

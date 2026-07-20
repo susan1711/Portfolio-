@@ -40,7 +40,8 @@ type ProjectTechStackProps = {
 
 export function ProjectTechStack({ project }: ProjectTechStackProps) {
   return (
-    <section aria-labelledby="tech-stack-heading" className="py-16 sm:py-20 lg:py-24">
+    <section aria-labelledby="tech-stack-heading" className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
+      <div aria-hidden="true" className="glow-dot -right-32 top-0 size-64 opacity-30 dark:opacity-20" />
       <Container size="content">
         <div className="mx-auto max-w-3xl">
           <MotionBlock>

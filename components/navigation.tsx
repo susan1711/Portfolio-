@@ -56,10 +56,10 @@ export function Navigation() {
               <a
                 aria-current={activeHref === item.href ? "page" : undefined}
                 className={cn(
-                  "rounded-xl px-3 py-2 text-sm font-medium transition-colors",
+                  "rounded-xl px-3 py-2 text-sm font-medium transition-all duration-200",
                   activeHref === item.href
                     ? "bg-secondary text-foreground"
-                    : "text-muted-foreground hover:text-foreground",
+                    : "text-muted-foreground hover:bg-secondary/60 hover:text-foreground",
                 )}
                 href={item.href}
                 key={item.href}

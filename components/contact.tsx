@@ -101,14 +101,14 @@ export function Contact() {
             </MotionBlock>
 
             <MotionBlock className="flex flex-col gap-3 sm:flex-row" delay={0.16}>
-              <Button asChild size="lg">
+              <Button asChild className="gap-3" size="lg">
                 <a
                   href={contactContent.primaryCta.href}
                   rel={contactContent.primaryCta.href.startsWith("mailto:") ? undefined : "noreferrer"}
                   target={contactContent.primaryCta.href.startsWith("mailto:") ? undefined : "_blank"}
                 >
                   {contactContent.primaryCta.label}
-                  <ArrowUpRight aria-hidden="true" />
+                  <ArrowUpRight aria-hidden="true" className="size-5" />
                 </a>
               </Button>
               <Button asChild size="lg" variant="secondary">
@@ -117,7 +117,7 @@ export function Contact() {
                   <ArrowUpRight aria-hidden="true" />
                 </a>
               </Button>
-              <Button asChild size="lg" variant="ghost">
+              <Button asChild size="lg" variant="secondary">
                 <a
                   download={contactContent.resume.download}
                   href={contactContent.resume.href}
@@ -141,12 +141,13 @@ export function Contact() {
                 >
                   <a
                     aria-label={social.ariaLabel}
+                    className="gap-3"
                     href={social.href}
                     rel="noreferrer"
                     target="_blank"
                   >
                     {social.label}
-                    <ExternalLink aria-hidden="true" className="size-3.5" />
+                    <ExternalLink aria-hidden="true" className="size-4" />
                   </a>
                 </Button>
               ))}

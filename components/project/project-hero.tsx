@@ -43,7 +43,9 @@ type ProjectHeroProps = {
 
 export function ProjectHero({ project }: ProjectHeroProps) {
   return (
-    <section aria-label={`${project.name} case study hero`} className="border-b border-border/70 bg-secondary/30 pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-24">
+    <section aria-label={`${project.name} case study hero`} className="relative overflow-hidden border-b border-border/70 bg-secondary/30 pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-24">
+      <div aria-hidden="true" className="glow-dot -left-40 -top-40 size-80 opacity-40 dark:opacity-30" />
+      <div aria-hidden="true" className="glow-dot -bottom-40 -right-40 size-80 opacity-30 dark:opacity-20" />
       <Container size="content">
         <div className="mx-auto max-w-3xl">
           <MotionBlock>
