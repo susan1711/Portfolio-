@@ -22,7 +22,7 @@ export function Hero() {
 
       <Container
         className="flex min-h-[calc(100svh-5.75rem)] items-center py-20 sm:py-24 lg:py-28"
-        size="page"
+        size="content"
       >
         <div className="max-w-4xl">
           <motion.div animate={animate} initial={initial} transition={transition}>

@@ -57,7 +57,7 @@ export function Skills() {
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">
           {skillsContent.categories.map((category, index) => (
             <MotionBlock
-              className="group relative rounded-3xl border border-border bg-card p-6 shadow-[0_1px_2px_rgba(17,24,39,0.04)] transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[0_8px_24px_rgba(17,24,39,0.06)] dark:shadow-none dark:hover:border-primary/30 dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
+              className="group relative overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-[0_1px_2px_rgba(17,24,39,0.04)] transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[0_8px_24px_rgba(17,24,39,0.06)] dark:shadow-none dark:hover:border-primary/30 dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
               delay={0.08 + index * 0.06}
               key={category.id}
             >
