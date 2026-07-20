@@ -74,7 +74,7 @@ export const projects: Project[] = [
   },
   {
     id: "project-002",
-    slug: "fashion-storefront",
+    slug: "velzaara",
     featured: false,
     name: "Fashion Storefront",
     website: null,
@@ -109,11 +109,11 @@ export const projects: Project[] = [
     learning:
       "This project reinforced the value of building Shopify sections around real merchant workflows instead of one-off page layouts.",
     publiclyAvailable: false,
-    image: "/projects/fashion-storefront/hero.webp",
+    image: "/projects/velzaara/hero.webp",
   },
   {
     id: "project-003",
-    slug: "lifestyle-shopify-store",
+    slug: "seams-to-love",
     featured: false,
     name: "Lifestyle Shopify Store",
     website: null,
@@ -148,11 +148,11 @@ export const projects: Project[] = [
     learning:
       "The work sharpened my ability to improve existing Shopify themes without disrupting live merchant workflows.",
     publiclyAvailable: false,
-    image: "/projects/lifestyle-shopify-store/hero.webp",
+    image: "/projects/seams-to-love/hero.webp",
   },
   {
     id: "project-004",
-    slug: "b2b-catalog-store",
+    slug: "alankar-chennai",
     featured: false,
     name: "B2B Catalog Store",
     website: null,
@@ -187,11 +187,11 @@ export const projects: Project[] = [
     learning:
       "This project helped me think more carefully about Shopify stores where the primary conversion path is inquiry and trust, not only checkout.",
     publiclyAvailable: false,
-    image: "/projects/b2b-catalog-store/hero.webp",
+    image: "/projects/alankar-chennai/hero.webp",
   },
   {
     id: "project-005",
-    slug: "figma-to-shopify-theme",
+    slug: "angelic-weaves",
     featured: false,
     name: "Figma to Shopify Theme",
     website: null,
@@ -226,11 +226,11 @@ export const projects: Project[] = [
     learning:
       "The project reinforced how important it is to translate design systems into Shopify editing systems, not just pixel layouts.",
     publiclyAvailable: false,
-    image: "/projects/figma-to-shopify-theme/hero.webp",
+    image: "/projects/angelic-weaves/hero.webp",
   },
   {
     id: "project-006",
-    slug: "store-optimization",
+    slug: "enzymatic-enviro",
     featured: false,
     name: "Store Optimization",
     website: null,
@@ -265,6 +265,6 @@ export const projects: Project[] = [
     learning:
       "This work strengthened my habit of solving Shopify issues with focused, low-risk changes that respect the existing store.",
     publiclyAvailable: false,
-    image: "/projects/store-optimization/hero.webp",
+    image: "/projects/enzymatic-enviro/hero.webp",
   },
 ];

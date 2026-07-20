@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight, CheckCircle2, ExternalLink } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -103,9 +104,11 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
                   </a>
                 </Button>
               ) : null}
-              <Button disabled size="lg" variant="secondary">
-                Detailed Case Study
-                <ArrowUpRight aria-hidden="true" />
+              <Button asChild size="lg" variant="secondary">
+                <Link href={`/projects/${project.slug}`}>
+                  Detailed Case Study
+                  <ArrowUpRight aria-hidden="true" />
+                </Link>
               </Button>
             </MotionBlock>
           </div>
