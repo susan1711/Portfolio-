@@ -10,7 +10,7 @@ export const contactContent = {
   description:
     "Whether you are looking for a Shopify developer for your agency, need help with a store, or simply want to connect—I would love to hear from you.",
   availability: "Available for select opportunities",
-  email: "hello@sudharsan.dev",
+  email: "sudhanb1819@gmail.com",
   location: "Chennai, India",
   resume: {
     label: "Download Resume",
@@ -19,7 +19,7 @@ export const contactContent = {
   },
   primaryCta: {
     label: "Send a Message",
-    href: "mailto:hello@sudharsan.dev",
+    href: "mailto:sudhanb1819@gmail.com",
   },
   secondaryCta: {
     label: "View Projects",
@@ -28,17 +28,17 @@ export const contactContent = {
   socials: [
     {
       label: "GitHub",
-      href: "https://github.com/sudharsan",
+      href: "https://github.com/susan1711",
       ariaLabel: "Visit Sudharsan on GitHub",
     },
     {
       label: "LinkedIn",
-      href: "https://linkedin.com/in/sudharsan",
+      href: "https://www.linkedin.com/in/sudharsan-bharathi-raja/",
       ariaLabel: "Visit Sudharsan on LinkedIn",
     },
     {
       label: "Email",
-      href: "mailto:hello@sudharsan.dev",
+      href: "mailto:sudhanb1819@gmail.com",
       ariaLabel: "Send an email to Sudharsan",
     },
   ] satisfies SocialLink[],
