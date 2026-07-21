@@ -99,7 +99,7 @@ export function ComingSoon() {
               </a>
             </Button>
             <Button asChild size="lg" variant="secondary">
-              <a href="https://github.com/sudharsan" rel="noreferrer" target="_blank">
+              <a href="https://github.com/susan1711" rel="noreferrer" target="_blank">
                 GitHub
                 <ExternalLink aria-hidden="true" className="size-3.5" />
               </a>
