@@ -105,7 +105,7 @@ export function ComingSoon() {
               </a>
             </Button>
             <Button asChild size="lg" variant="secondary">
-              <a href="https://linkedin.com/in/sudharsan" rel="noreferrer" target="_blank">
+              <a href="https://www.linkedin.com/in/sudharsan-bharathi-raja/" rel="noreferrer" target="_blank">
                 LinkedIn
                 <ExternalLink aria-hidden="true" className="size-3.5" />
               </a>
