@@ -34,6 +34,18 @@ function toStatus(publiclyAvailable: boolean): "Live" | "Private" | "Archived" {
   return publiclyAvailable ? "Live" : "Private";
 }
 
+const galleryMap: Record<string, { src: string; alt: string }[]> = {
+  ilyzly: [
+    { src: "/projects/ilyzly/hero.webp", alt: "Ilyzly hero screenshot" },
+    { src: "/projects/ilyzly/full.webp", alt: "Ilyzly full page screenshot" },
+    { src: "/projects/ilyzly/collection.webp", alt: "Ilyzly collection page" },
+    { src: "/projects/ilyzly/product.webp", alt: "Ilyzly product page" },
+    { src: "/projects/ilyzly/mobile.webp", alt: "Ilyzly mobile viewport" },
+    { src: "/projects/ilyzly/feature 1.webp", alt: "Ilyzly feature highlight 1" },
+    { src: "/projects/ilyzly/feature 2.webp", alt: "Ilyzly feature highlight 2" },
+  ],
+};
+
 export const projectDetails: ProjectDetail[] = projects.map((p) => ({
   slug: p.slug,
   name: p.name,
@@ -57,7 +69,7 @@ export const projectDetails: ProjectDetail[] = projects.map((p) => ({
     businessOutcome: null,
   },
   learning: p.learning,
-  gallery: [],
+  gallery: galleryMap[p.slug] ?? [],
 }));
 
 export function getProjectDetail(slug: string): ProjectDetail | undefined {

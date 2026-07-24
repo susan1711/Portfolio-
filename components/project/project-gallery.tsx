@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { ImageIcon } from "lucide-react";
+import Image from "next/image";
 
 import { Container } from "@/components/ui/container";
 import { Typography } from "@/components/ui/typography";
@@ -57,20 +57,19 @@ export function ProjectGallery({ project }: ProjectGalleryProps) {
         </MotionBlock>
 
         <MotionBlock className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" delay={0.06}>
-          {project.gallery.map((image, index) => (
-            <div
-              className="group relative aspect-[4/3] overflow-hidden rounded-3xl border border-border bg-muted"
-              key={image.src}
-            >
-              <div className="flex size-full items-center justify-center">
-                <div className="text-center">
-                  <ImageIcon aria-hidden="true" className="mx-auto size-8 text-muted-foreground/40" />
-                  <p className="mt-2 text-xs text-muted-foreground/40">
-                    Screenshot {index + 1}
-                  </p>
-                </div>
+          {project.gallery.map((image) => (
+              <div
+                className="group relative aspect-[4/3] overflow-hidden rounded-3xl border border-border bg-muted"
+                key={image.src}
+              >
+                <Image
+                  alt={image.alt}
+                  className="size-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  src={image.src}
+                />
               </div>
-            </div>
           ))}
         </MotionBlock>
       </Container>
