@@ -5,7 +5,7 @@ export interface SkillCategory {
 }
 
 export const skillsContent = {
-  eyebrow: "Skills & Technologies",
+  eyebrow: "Beyond Development",
   title: "Tools I work with daily",
   description:
     "Technologies and tools I use to build modern Shopify experiences.",

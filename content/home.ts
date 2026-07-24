@@ -1,7 +1,10 @@
 export const homeContent = {
   navigation: [
     { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "What I Do", href: "#what-i-do" },
     { label: "Projects", href: "#projects" },
+    { label: "Process", href: "#process" },
     { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" },
   ],

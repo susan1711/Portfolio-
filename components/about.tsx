@@ -6,6 +6,7 @@ import { ArrowUpRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
+import { VisualContainer } from "@/components/visual-container";
 import { aboutContent } from "@/content/about";
 
 const transition = { duration: 0.5, ease: [0.22, 1, 0.36, 1] } as const;
@@ -70,36 +71,7 @@ export function About() {
             </motion.div>
           </div>
 
-          <motion.aside
-            animate={animate}
-            className="relative overflow-hidden rounded-3xl border border-border bg-secondary p-6 sm:p-8 lg:self-end"
-            initial={initial}
-            transition={{ ...transition, delay: shouldReduceMotion ? 0 : 0.16 }}
-          >
-            <div aria-hidden="true" className="absolute -right-16 -top-16 size-44 rounded-full bg-primary/15 blur-3xl" />
-            <div aria-hidden="true" className="absolute -bottom-16 -left-16 size-44 rounded-full bg-primary/10 blur-3xl" />
-            <div className="relative">
-              <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
-                {aboutContent.snapshotLabel}
-              </p>
-              <dl className="mt-7 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border">
-                {aboutContent.stats.map((stat, index) => (
-                  <motion.div
-                    animate={animate}
-                    className="min-h-32 bg-card p-5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md sm:p-6"
-                    initial={initial}
-                    key={stat.label}
-                    transition={{ ...transition, delay: shouldReduceMotion ? 0 : 0.24 + index * 0.06 }}
-                  >
-                    <dt className="text-sm leading-5 text-muted-foreground">{stat.label}</dt>
-                    <dd className="mt-3 font-heading text-2xl font-semibold tracking-[-0.04em] text-foreground sm:text-3xl">
-                      {stat.value}
-                    </dd>
-                  </motion.div>
-                ))}
-              </dl>
-            </div>
-          </motion.aside>
+          <VisualContainer />
         </div>
       </Container>
     </Section>
