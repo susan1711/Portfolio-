@@ -13,23 +13,38 @@ export function Preloader() {
   useEffect(() => {
     if (!isVisible) return;
 
-    const duration = shouldReduceMotion ? 400 : 3500;
+    const duration = shouldReduceMotion ? 500 : 6000;
     const startTime = performance.now();
     let rafId: number;
 
     function update(currentTime: number) {
       const elapsed = currentTime - startTime;
       const raw = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - raw, 3);
+
+      let eased: number;
+      if (raw <= 0.55) {
+        const t = raw / 0.55;
+        eased = 0.50 * (1 - Math.pow(1 - t, 3));
+      } else if (raw <= 0.80) {
+        const t = (raw - 0.55) / 0.25;
+        eased = 0.50 + 0.33 * t;
+      } else if (raw <= 0.93) {
+        const t = (raw - 0.80) / 0.13;
+        eased = 0.83 + 0.14 * (1 - Math.pow(1 - t, 3));
+      } else {
+        eased = 0.97;
+      }
+
       setProgress(eased * 100);
 
-      if (raw < 1) {
-        rafId = requestAnimationFrame(update);
-      } else {
+      if (raw >= 1) {
+        setProgress(100);
         setTimeout(() => {
           preloaderCompleted = true;
           setIsVisible(false);
-        }, 300);
+        }, 400);
+      } else {
+        rafId = requestAnimationFrame(update);
       }
     }
 

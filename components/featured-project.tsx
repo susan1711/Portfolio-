@@ -63,8 +63,8 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
       spacing="spacious"
     >
       <Container size="content">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-16 xl:gap-20">
-          <div className="lg:sticky lg:top-28 lg:self-start">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-12">
+          <div className="lg:sticky lg:top-24 lg:self-start">
             <MotionBlock>
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
                 Featured project
@@ -83,8 +83,8 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
               </p>
             </MotionBlock>
 
-            <MotionBlock className="group mt-8 overflow-hidden rounded-3xl border border-border bg-card transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-lg" delay={0.08}>
-              <div className="aspect-[4/3] overflow-hidden bg-muted">
+            <MotionBlock className="group mt-6 overflow-hidden rounded-3xl border border-border bg-card transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-lg" delay={0.08}>
+              <div className="aspect-video overflow-hidden bg-muted lg:aspect-[4/3]">
                 <Image
                   alt={`${project.name} project preview`}
                   className="size-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
@@ -95,7 +95,7 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
               </div>
             </MotionBlock>
 
-            <MotionBlock className="mt-8 flex flex-col gap-3 sm:flex-row" delay={0.16}>
+            <MotionBlock className="mt-6 flex flex-col gap-3 sm:flex-row" delay={0.16}>
               {project.website ? (
                 <Button asChild size="lg">
                   <a href={project.website} rel="noreferrer" target="_blank">
@@ -113,7 +113,7 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
             </MotionBlock>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             <MotionBlock className="grid gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-2">
               {stats.map((stat) => (
                 <div className="min-h-32 bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md" key={stat.label}>

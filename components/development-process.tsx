@@ -21,6 +21,30 @@ const processIcons: Record<string, ReactNode> = {
   support: <HeartHandshake aria-hidden="true" className="size-5" />,
 };
 
+function MotionBlock({
+  children,
+  className,
+  delay = 0,
+}: {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}) {
+  const shouldReduceMotion = useReducedMotion();
+  const initial = shouldReduceMotion ? false : { opacity: 0, y: 18 };
+
+  return (
+    <motion.div
+      animate={{ opacity: 1, y: 0 }}
+      className={className}
+      initial={initial}
+      transition={{ ...transition, delay: shouldReduceMotion ? 0 : delay }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 function StepCard({
   step,
   index,
@@ -154,14 +178,13 @@ function SCurvePath() {
     <svg
       aria-hidden="true"
       className="absolute left-1/2 top-0 hidden h-full w-12 -translate-x-1/2 lg:block"
-      preserveAspectRatio="xMidYMax slice"
+      preserveAspectRatio="none"
       viewBox="0 0 48 800"
     >
       <path
         d="M 24 0 Q 32 40, 24 80 T 32 200 T 16 320 T 32 440 T 16 560 T 32 680 T 24 800"
         fill="none"
         stroke="currentColor"
-        strokeDasharray="4 6"
         strokeLinecap="round"
         className="text-border"
         style={{ strokeWidth: 2 }}
@@ -179,7 +202,7 @@ export function DevelopmentProcess() {
       spacing="spacious"
     >
       <Container size="content">
-        <div className="text-center">
+        <MotionBlock>
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
             {processContent.eyebrow}
           </p>
@@ -192,7 +215,7 @@ export function DevelopmentProcess() {
           <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
             {processContent.description}
           </p>
-        </div>
+        </MotionBlock>
 
         {/* Mobile layout */}
         <div className="relative mt-16 space-y-10 lg:hidden">

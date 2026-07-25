@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowLeft, ArrowRight, ArrowUpRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -68,6 +68,7 @@ export function FeaturedProjectsCarousel({ projects }: FeaturedProjectsCarouselP
 
   const activeProject = projects[activeIndex];
   const total = projects.length;
+  const cardWidthPercent = isMobile ? 100 : 78;
 
   const goTo = (index: number) => {
     setActiveIndex(index);
@@ -80,8 +81,6 @@ export function FeaturedProjectsCarousel({ projects }: FeaturedProjectsCarouselP
   const goNext = () => {
     setActiveIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
   };
-
-  const projectImage = isMobile && activeProject.mobileImage ? activeProject.mobileImage : activeProject.image;
 
   return (
     <Section
@@ -109,36 +108,45 @@ export function FeaturedProjectsCarousel({ projects }: FeaturedProjectsCarouselP
         <div className="mt-16 lg:mt-20">
           <div className="relative">
             <div className="overflow-hidden rounded-3xl border border-border bg-card">
-              <div className="aspect-[16/10] overflow-hidden bg-muted lg:aspect-[16/9]">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    animate={{ opacity: 1 }}
-                    className="size-full"
-                    exit={{ opacity: 0 }}
-                    initial={shouldReduceMotion ? false : { opacity: 0 }}
-                    key={`${activeProject.slug}-${projectImage}`}
-                    transition={{ duration: 0.4 }}
-                  >
-                    <Image
-                      alt={`${activeProject.name} project preview`}
-                      className="size-full object-cover"
-                      height={900}
-                      src={projectImage}
-                      width={1600}
-                    />
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-
-              <div className="p-6 sm:p-8">
-                <Badge variant="default">{activeProject.industry}</Badge>
-                <h3 className="mt-3 font-heading text-3xl font-semibold tracking-[-0.04em] text-foreground sm:text-4xl">
-                  {activeProject.name}
-                </h3>
-                <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
-                  {activeProject.overview}
-                </p>
-              </div>
+              <motion.div
+                animate={{ x: `${-(activeIndex * cardWidthPercent)}%` }}
+                className="flex"
+                transition={
+                  shouldReduceMotion
+                    ? { duration: 0 }
+                    : { duration: 0.5, ease: [0.22, 1, 0.36, 1] }
+                }
+              >
+                {projects.map((project) => {
+                  const projectImage = isMobile && project.mobileImage ? project.mobileImage : project.image;
+                  return (
+                    <div
+                      className="shrink-0"
+                      key={project.slug}
+                      style={{ width: `${cardWidthPercent}%` }}
+                    >
+                      <div className="aspect-[16/10] overflow-hidden bg-muted lg:aspect-[16/9]">
+                        <Image
+                          alt={`${project.name} project preview`}
+                          className="size-full object-cover"
+                          height={900}
+                          src={projectImage}
+                          width={1600}
+                        />
+                      </div>
+                      <div className="p-6 sm:p-8">
+                        <Badge variant="default">{project.industry}</Badge>
+                        <h3 className="mt-3 font-heading text-3xl font-semibold tracking-[-0.04em] text-foreground sm:text-4xl">
+                          {project.name}
+                        </h3>
+                        <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
+                          {project.overview}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </motion.div>
             </div>
 
             <div className="mt-6 flex items-center justify-between">

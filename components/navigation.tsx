@@ -16,16 +16,38 @@ export function Navigation() {
 
   useEffect(() => {
     const updateScrollState = () => setHasScrolled(window.scrollY > 8);
-    const updateActiveHash = () => setActiveHref(window.location.hash || "#home");
-
     updateScrollState();
-    updateActiveHash();
+
     window.addEventListener("scroll", updateScrollState, { passive: true });
-    window.addEventListener("hashchange", updateActiveHash);
+
+    const sectionIds = homeContent.navigation.map((item) => item.href.replace("#", ""));
+
+    const intersectionObserver = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveHref(`#${entry.target.id}`);
+          }
+        }
+      },
+      {
+        rootMargin: "-80px 0px -70% 0px",
+        threshold: 0,
+      },
+    );
+
+    const elements: Element[] = [];
+    for (const id of sectionIds) {
+      const el = document.getElementById(id);
+      if (el) {
+        intersectionObserver.observe(el);
+        elements.push(el);
+      }
+    }
 
     return () => {
       window.removeEventListener("scroll", updateScrollState);
-      window.removeEventListener("hashchange", updateActiveHash);
+      intersectionObserver.disconnect();
     };
   }, []);
 
