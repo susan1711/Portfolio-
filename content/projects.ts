@@ -19,6 +19,7 @@ export interface Project {
   learning: string;
   publiclyAvailable: boolean;
   image: string;
+  mobileImage?: string;
 }
 
 export const projects: Project[] = [
@@ -71,6 +72,7 @@ export const projects: Project[] = [
       "The project strengthened my approach to balancing brand presentation with practical Shopify maintainability, especially when a store needs to keep changing after launch.",
     publiclyAvailable: true,
     image: "/projects/ilyzly/hero.webp",
+    mobileImage: "/projects/ilyzly/mobile.webp",
   },
   {
     id: "project-002",

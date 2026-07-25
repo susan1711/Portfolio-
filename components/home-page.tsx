@@ -5,6 +5,7 @@ import { Experience } from "@/components/experience";
 import { FeaturedProjectsCarousel } from "@/components/featured-projects-carousel";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
+import { KnowledgeMarquee } from "@/components/knowledge-marquee";
 import { Navigation } from "@/components/navigation";
 import { Preloader } from "@/components/preloader";
 import { WhatIDo } from "@/components/what-i-do";
@@ -21,6 +22,7 @@ export function HomePage() {
       <Navigation />
       <Hero />
       <About />
+      <KnowledgeMarquee />
       <WhatIDo />
       <FeaturedProjectsCarousel projects={featuredProjects} />
       <DevelopmentProcess />
