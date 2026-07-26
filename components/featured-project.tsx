@@ -60,7 +60,7 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
       aria-labelledby="featured-project-heading"
       className="border-y border-border/70 bg-secondary/45"
       id="projects"
-      spacing="spacious"
+      spacing="default"
     >
       <Container size="content">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-12">
@@ -78,7 +78,7 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
                 </h2>
                 <Badge className="mt-1" variant="default">{project.industry}</Badge>
               </div>
-              <p className="mt-7 max-w-2xl text-lg leading-8 text-muted-foreground">
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">
                 {project.overview}
               </p>
             </MotionBlock>
@@ -116,32 +116,32 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
           <div className="space-y-6">
             <MotionBlock className="grid gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-2">
               {stats.map((stat) => (
-                <div className="min-h-32 bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md" key={stat.label}>
+                <div className="min-h-28 bg-card p-5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md sm:p-7" key={stat.label}>
                   <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">{stat.label}</p>
-                  <p className="mt-3 font-heading text-2xl font-semibold tracking-[-0.04em] text-foreground">
+                  <p className="mt-2 font-heading text-2xl font-semibold tracking-[-0.04em] text-foreground">
                     {stat.value}
                   </p>
                 </div>
               ))}
             </MotionBlock>
 
-            <MotionBlock className="rounded-3xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-md sm:p-8" delay={0.08}>
+            <MotionBlock className="rounded-3xl border border-border bg-card p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-md sm:p-7" delay={0.08}>
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
                 Client goal
               </p>
-              <p className="mt-4 text-base leading-7 text-muted-foreground">{project.clientGoal}</p>
+              <p className="mt-3 text-base leading-7 text-muted-foreground">{project.clientGoal}</p>
             </MotionBlock>
 
-            <MotionBlock className="grid gap-6 xl:grid-cols-2" delay={0.12}>
+            <MotionBlock className="grid gap-4 xl:grid-cols-2" delay={0.12}>
               <ProjectList title="Responsibilities" items={project.responsibilities} />
               <ProjectList title="Features" items={project.features} />
             </MotionBlock>
 
-            <MotionBlock className="rounded-3xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-md sm:p-8" delay={0.16}>
+            <MotionBlock className="rounded-3xl border border-border bg-card p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-md sm:p-7" delay={0.16}>
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
                 Technologies
               </p>
-              <div className="mt-5 flex flex-wrap gap-2">
+              <div className="mt-4 flex flex-wrap gap-2">
                 {project.technologies.map((technology) => (
                   <Badge key={technology} variant="secondary">
                     {technology}
@@ -150,7 +150,7 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
               </div>
             </MotionBlock>
 
-            <MotionBlock className="grid gap-6" delay={0.2}>
+            <MotionBlock className="grid gap-4" delay={0.2}>
               <ProjectNarrative title="Challenge" content={project.challenge} />
               <ProjectNarrative title="Solution" content={project.solution} />
               <ProjectList title="Results" items={project.results} />
@@ -165,11 +165,11 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
 
 function ProjectList({ title, items }: { title: string; items: string[] }) {
   return (
-    <div className="rounded-3xl border border-border bg-card p-6 sm:p-8">
+    <div className="rounded-3xl border border-border bg-card p-5 sm:p-7">
       <h3 className="font-heading text-2xl font-semibold tracking-[-0.04em] text-foreground">
         {title}
       </h3>
-      <ul className="mt-5 space-y-4">
+      <ul className="mt-4 space-y-3">
         {items.map((item) => (
           <li className="flex gap-3 text-sm leading-6 text-muted-foreground" key={item}>
             <CheckCircle2 aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-primary" />
@@ -183,11 +183,11 @@ function ProjectList({ title, items }: { title: string; items: string[] }) {
 
 function ProjectNarrative({ title, content }: { title: string; content: string }) {
   return (
-    <div className="rounded-3xl border border-border bg-card p-6 sm:p-8">
+    <div className="rounded-3xl border border-border bg-card p-5 sm:p-7">
       <h3 className="font-heading text-2xl font-semibold tracking-[-0.04em] text-foreground">
         {title}
       </h3>
-      <p className="mt-4 text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
+      <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
         {content}
       </p>
     </div>

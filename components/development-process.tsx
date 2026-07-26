@@ -182,7 +182,7 @@ function SCurvePath() {
       viewBox="0 0 48 800"
     >
       <path
-        d="M 24 0 Q 32 40, 24 80 T 32 200 T 16 320 T 32 440 T 16 560 T 32 680 T 24 800"
+        d="M 24 0 Q 32 57, 24 114 T 24 229 T 24 343 T 24 457 T 24 571 T 24 686 T 24 800"
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"
