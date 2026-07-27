@@ -9,40 +9,34 @@ export function Preloader() {
   const shouldReduceMotion = useReducedMotion();
   const [progress, setProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(!preloaderCompleted);
+  const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
     if (!isVisible) return;
 
-    const duration = shouldReduceMotion ? 500 : 6000;
+    const progressDuration = shouldReduceMotion ? 500 : 6000;
+    const holdDuration = shouldReduceMotion ? 0 : 1200;
+    const fadeDuration = shouldReduceMotion ? 0 : 600;
     const startTime = performance.now();
     let rafId: number;
 
     function update(currentTime: number) {
       const elapsed = currentTime - startTime;
-      const raw = Math.min(elapsed / duration, 1);
+      const raw = Math.min(elapsed / progressDuration, 1);
 
-      let eased: number;
-      if (raw <= 0.55) {
-        const t = raw / 0.55;
-        eased = 0.50 * (1 - Math.pow(1 - t, 3));
-      } else if (raw <= 0.80) {
-        const t = (raw - 0.55) / 0.25;
-        eased = 0.50 + 0.33 * t;
-      } else if (raw <= 0.93) {
-        const t = (raw - 0.80) / 0.13;
-        eased = 0.83 + 0.14 * (1 - Math.pow(1 - t, 3));
-      } else {
-        eased = 0.97;
-      }
+      const eased = 1 - Math.pow(1 - raw, 1.8);
 
       setProgress(eased * 100);
 
       if (raw >= 1) {
         setProgress(100);
         setTimeout(() => {
-          preloaderCompleted = true;
-          setIsVisible(false);
-        }, 400);
+          setFadeOut(true);
+          setTimeout(() => {
+            preloaderCompleted = true;
+            setIsVisible(false);
+          }, fadeDuration);
+        }, holdDuration);
       } else {
         rafId = requestAnimationFrame(update);
       }
@@ -56,13 +50,11 @@ export function Preloader() {
 
   return (
     <motion.div
-      animate={{ opacity: 0 }}
+      animate={fadeOut ? { opacity: 0 } : { opacity: 1 }}
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background"
-      exit={{ opacity: 0 }}
       initial={{ opacity: 1 }}
       transition={{
         duration: shouldReduceMotion ? 0 : 0.6,
-        delay: shouldReduceMotion ? 0 : 0.2,
         ease: [0.22, 1, 0.36, 1],
       }}
     >

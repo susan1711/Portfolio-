@@ -69,6 +69,7 @@ export function FeaturedProjectsCarousel({ projects }: FeaturedProjectsCarouselP
   const activeProject = projects[activeIndex];
   const total = projects.length;
   const cardWidthPercent = isMobile ? 100 : 78;
+  const renderedProjects = projects.concat(projects[0]);
 
   const goTo = (index: number) => {
     setActiveIndex(index);
@@ -117,13 +118,14 @@ export function FeaturedProjectsCarousel({ projects }: FeaturedProjectsCarouselP
                     : { duration: 0.5, ease: [0.22, 1, 0.36, 1] }
                 }
               >
-                {projects.map((project) => {
+                {renderedProjects.map((project, index) => {
                   const projectImage = isMobile && project.mobileImage ? project.mobileImage : project.image;
+                  const isDuplicate = index >= total;
                   return (
                     <div
-                      className="shrink-0"
-                      key={project.slug}
-                      style={{ width: `${cardWidthPercent}%` }}
+                      className={`shrink-0${!isMobile ? " mx-3" : ""}`}
+                      key={isDuplicate ? `dup-${project.slug}` : project.slug}
+                      style={{ width: isMobile ? `${cardWidthPercent}%` : `calc(${cardWidthPercent}% - 24px)` }}
                     >
                       <div className="aspect-[16/10] overflow-hidden bg-muted lg:aspect-[16/9]">
                         <Image
