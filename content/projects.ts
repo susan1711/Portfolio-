@@ -113,47 +113,8 @@ export const projects: Project[] = [
     publiclyAvailable: true,
     image: "/projects/seams-to-love/hero.webp",
   },
-  {
+ {
     id: "project-003",
-    slug: "velzaara",
-    featured: true,
-    name: "Velzaara",
-    website: "https://velzaara.com",
-    industry: "Womens Fashion eCommerce",
-    role: "Shopify Developer",
-    duration: "Client project",
-    teamSize: "Agency collaboration",
-    overview:
-      "A Shopify customization project for a lifestyle brand, focused on improving content flexibility and storefront consistency.",
-    clientGoal:
-      "Refine the shopping experience and give the internal team better control over brand content and product merchandising.",
-    responsibilities: [
-      "Customized existing Shopify theme sections and templates.",
-      "Improved responsive behavior across key storefront pages.",
-      "Integrated app-driven content where it supported the buying experience.",
-    ],
-    technologies: ["Shopify", "Liquid", "JavaScript", "CSS", "Shopify Apps"],
-    features: [
-      "Custom content sections",
-      "Responsive layout refinements",
-      "App integration support",
-      "Collection and product page improvements",
-    ],
-    challenge:
-      "Existing storefront areas were difficult to update consistently across campaigns and device sizes.",
-    solution:
-      "Refactored key theme areas into reusable, configurable sections with cleaner responsive rules.",
-    results: [
-      "Improved storefront consistency across mobile, tablet, and desktop views.",
-      "Made content updates easier for non-technical store managers.",
-    ],
-    learning:
-      "The work sharpened my ability to improve existing Shopify themes without disrupting live merchant workflows.",
-    publiclyAvailable: true,
-    image: "/projects/velzaara/hero.webp",
-  },
-  {
-    id: "project-004",
     slug: "alankar-chennai",
     featured: false,
     name: "Alankar Chennai",
@@ -190,6 +151,45 @@ export const projects: Project[] = [
       "This project helped me think more carefully about Shopify stores where the primary conversion path is inquiry and trust, not only checkout.",
     publiclyAvailable: false,
     image: "/projects/alankar-chennai/hero.webp",
+  },
+  {
+    id: "project-004",
+    slug: "velzaara",
+    featured: true,
+    name: "Velzaara",
+    website: "https://velzaara.com",
+    industry: "Womens Fashion eCommerce",
+    role: "Shopify Developer",
+    duration: "Client project",
+    teamSize: "Agency collaboration",
+    overview:
+      "A Shopify customization project for a lifestyle brand, focused on improving content flexibility and storefront consistency.",
+    clientGoal:
+      "Refine the shopping experience and give the internal team better control over brand content and product merchandising.",
+    responsibilities: [
+      "Customized existing Shopify theme sections and templates.",
+      "Improved responsive behavior across key storefront pages.",
+      "Integrated app-driven content where it supported the buying experience.",
+    ],
+    technologies: ["Shopify", "Liquid", "JavaScript", "CSS", "Shopify Apps"],
+    features: [
+      "Custom content sections",
+      "Responsive layout refinements",
+      "App integration support",
+      "Collection and product page improvements",
+    ],
+    challenge:
+      "Existing storefront areas were difficult to update consistently across campaigns and device sizes.",
+    solution:
+      "Refactored key theme areas into reusable, configurable sections with cleaner responsive rules.",
+    results: [
+      "Improved storefront consistency across mobile, tablet, and desktop views.",
+      "Made content updates easier for non-technical store managers.",
+    ],
+    learning:
+      "The work sharpened my ability to improve existing Shopify themes without disrupting live merchant workflows.",
+    publiclyAvailable: true,
+    image: "/projects/velzaara/hero.webp",
   },
   {
     id: "project-005",

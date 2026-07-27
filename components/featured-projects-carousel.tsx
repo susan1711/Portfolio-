@@ -108,7 +108,7 @@ export function FeaturedProjectsCarousel({ projects }: FeaturedProjectsCarouselP
 
         <div className="mt-16 lg:mt-20">
           <div className="relative">
-            <div className="overflow-hidden rounded-3xl border border-border bg-card">
+            <div className="overflow-hidden">
               <motion.div
                 animate={{ x: `${-(activeIndex * cardWidthPercent)}%` }}
                 className="flex"
@@ -123,27 +123,29 @@ export function FeaturedProjectsCarousel({ projects }: FeaturedProjectsCarouselP
                   const isDuplicate = index >= total;
                   return (
                     <div
-                      className={`shrink-0${!isMobile ? " mx-3" : ""}`}
+                      className={`shrink-0 bg-card rounded-3xl border border-border${!isMobile ? " mx-4" : ""}`}
                       key={isDuplicate ? `dup-${project.slug}` : project.slug}
-                      style={{ width: isMobile ? `${cardWidthPercent}%` : `calc(${cardWidthPercent}% - 24px)` }}
+                      style={{ width: isMobile ? `${cardWidthPercent}%` : `calc(${cardWidthPercent}% - 32px)` }}
                     >
-                      <div className="aspect-[16/10] overflow-hidden bg-muted lg:aspect-[16/9]">
-                        <Image
-                          alt={`${project.name} project preview`}
-                          className="size-full object-cover"
-                          height={900}
-                          src={projectImage}
-                          width={1600}
-                        />
-                      </div>
-                      <div className="p-6 sm:p-8">
-                        <Badge variant="default">{project.industry}</Badge>
-                        <h3 className="mt-3 font-heading text-3xl font-semibold tracking-[-0.04em] text-foreground sm:text-4xl">
-                          {project.name}
-                        </h3>
-                        <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
-                          {project.overview}
-                        </p>
+                      <div className="p-5 sm:p-6">
+                        <div className="aspect-[16/10] overflow-hidden rounded-2xl bg-muted lg:aspect-[16/9]">
+                          <Image
+                            alt={`${project.name} project preview`}
+                            className="size-full object-cover"
+                            height={900}
+                            src={projectImage}
+                            width={1600}
+                          />
+                        </div>
+                        <div className="mt-6">
+                          <Badge variant="default">{project.industry}</Badge>
+                          <h3 className="mt-3 font-heading text-3xl font-semibold tracking-[-0.04em] text-foreground sm:text-4xl">
+                            {project.name}
+                          </h3>
+                          <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
+                            {project.overview}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   );
