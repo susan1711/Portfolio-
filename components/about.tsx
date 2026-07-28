@@ -71,7 +71,7 @@ export function About() {
             </motion.div>
           </div>
 
-          <VisualContainer />
+          <VisualContainer imageAlt={aboutContent.image.alt} imageSrc={aboutContent.image.src} />
         </div>
       </Container>
     </Section>

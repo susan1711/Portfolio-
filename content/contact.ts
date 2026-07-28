@@ -11,7 +11,7 @@ export const contactContent = {
     "Whether you are looking for a Shopify developer for your agency, need help with a store, or simply want to connect—I would love to hear from you.",
   availability: "Available for select opportunities",
   email: "sudhanb1819@gmail.com",
-  location: "Chennai, India",
+  location: "Tiruppur, India",
   resume: {
     label: "Download Resume",
     href: "/resume.pdf",

@@ -116,7 +116,7 @@ export const projects: Project[] = [
  {
     id: "project-003",
     slug: "alankar-chennai",
-    featured: false,
+    featured: true,
     name: "Alankar Chennai",
     website: "https://alankarchennai.in",
     industry: "Womens Fashion eCommerce",
@@ -149,13 +149,13 @@ export const projects: Project[] = [
     ],
     learning:
       "This project helped me think more carefully about Shopify stores where the primary conversion path is inquiry and trust, not only checkout.",
-    publiclyAvailable: false,
+    publiclyAvailable: true,
     image: "/projects/alankar-chennai/hero.webp",
   },
   {
     id: "project-004",
     slug: "velzaara",
-    featured: true,
+    featured: false,
     name: "Velzaara",
     website: "https://velzaara.com",
     industry: "Womens Fashion eCommerce",

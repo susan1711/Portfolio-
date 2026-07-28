@@ -2,39 +2,42 @@
 
 import { useReducedMotion } from "framer-motion";
 
-import { knowledgeLogos } from "@/content/knowledge-logos";
+import { tools } from "@/content/knowledge-logos";
+import { ToolCard } from "@/components/ui/tool-card";
 
 export function KnowledgeMarquee() {
   const shouldReduceMotion = useReducedMotion();
 
   if (shouldReduceMotion) {
     return (
-      <div className="flex flex-wrap justify-center gap-4">
-        {knowledgeLogos.map((logo) => (
-          <div
-            key={logo.id}
-            aria-label={logo.name}
-            className="text-muted-foreground"
-            dangerouslySetInnerHTML={{ __html: logo.svg }}
-          />
-        ))}
+      <div className="w-full">
+        <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-3 py-16">
+            {tools.map((tool) => (
+              <ToolCard key={tool.name} name={tool.name} icon={tool.icon} />
+            ))}
+          </div>
+        </div>
       </div>
     );
   }
 
-  const doubledLogos = [...knowledgeLogos, ...knowledgeLogos];
+  const doubledTools = [...tools, ...tools];
 
   return (
-    <div className="group relative overflow-hidden">
-      <div className="flex w-max animate-marquee [--duration:40s] group-hover:[animation-play-state:paused]">
-        {doubledLogos.map((logo, index) => (
-          <div
-            key={`${logo.id}-${index}`}
-            aria-label={logo.name}
-            className="flex shrink-0 items-center justify-center text-muted-foreground transition-colors duration-200 hover:text-foreground"
-            dangerouslySetInnerHTML={{ __html: logo.svg }}
-          />
-        ))}
+    <div className="w-full">
+      <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-8">
+        <div className="group relative overflow-x-hidden overflow-y-visible py-2"
+              style={{ 
+                WebkitMaskImage:"linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+                maskImage:"linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+                }}>
+          <div className="flex w-max gap-4 animate-marquee [--duration:70s] group-hover:[animation-play-state:paused] sm:gap-6">
+            {doubledTools.map((tool, index) => (
+              <ToolCard key={`${tool.name}-${index}`} name={tool.name} icon={tool.icon} />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

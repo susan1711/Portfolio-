@@ -1,53 +1,48 @@
-export interface KnowledgeLogo {
-  id: string;
+import {
+  siClaudecode,
+  siGoogleanalytics,
+  siGooglemarketingplatform,
+  siMeta,
+  siN8n,
+  siRazorpay,
+  siShopify,
+  siWix,
+  siWordpress,
+  type SimpleIcon,
+} from "simple-icons";
+import {
+  Box,
+  Code2,
+  Image,
+  Palette,
+  TrendingUp,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
+
+export type ToolIcon =
+  | { type: "simple"; icon: SimpleIcon }
+  | { type: "lucide"; icon: LucideIcon };
+
+export interface ToolData {
   name: string;
-  svg: string;
+  icon: ToolIcon;
 }
 
-export const knowledgeLogos: KnowledgeLogo[] = [
-  {
-    id: "shopify",
-    name: "Shopify",
-    svg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" rx="12" fill="currentColor" opacity="0.08"/><text x="60" y="36" text-anchor="middle" dominant-baseline="middle" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="currentColor">Shopify</text></svg>`,
-  },
-  {
-    id: "meta",
-    name: "Meta",
-    svg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" rx="12" fill="currentColor" opacity="0.08"/><text x="60" y="36" text-anchor="middle" dominant-baseline="middle" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="currentColor">Meta</text></svg>`,
-  },
-  {
-    id: "google-analytics",
-    name: "Google Analytics",
-    svg: `<svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg"><rect width="140" height="60" rx="12" fill="currentColor" opacity="0.08"/><text x="70" y="36" text-anchor="middle" dominant-baseline="middle" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="currentColor">Analytics</text></svg>`,
-  },
-  {
-    id: "google-merchant",
-    name: "Google Merchant Center",
-    svg: `<svg viewBox="0 0 160 60" xmlns="http://www.w3.org/2000/svg"><rect width="160" height="60" rx="12" fill="currentColor" opacity="0.08"/><text x="80" y="36" text-anchor="middle" dominant-baseline="middle" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="currentColor">Merchant Center</text></svg>`,
-  },
-  {
-    id: "n8n",
-    name: "n8n",
-    svg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" rx="12" fill="currentColor" opacity="0.08"/><text x="60" y="36" text-anchor="middle" dominant-baseline="middle" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="currentColor">n8n</text></svg>`,
-  },
-  {
-    id: "pabbly",
-    name: "Pabbly",
-    svg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" rx="12" fill="currentColor" opacity="0.08"/><text x="60" y="36" text-anchor="middle" dominant-baseline="middle" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="currentColor">Pabbly</text></svg>`,
-  },
-  {
-    id: "git",
-    name: "Git",
-    svg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" rx="12" fill="currentColor" opacity="0.08"/><text x="60" y="36" text-anchor="middle" dominant-baseline="middle" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="currentColor">Git</text></svg>`,
-  },
-  {
-    id: "github",
-    name: "GitHub",
-    svg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" rx="12" fill="currentColor" opacity="0.08"/><text x="60" y="36" text-anchor="middle" dominant-baseline="middle" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="currentColor">GitHub</text></svg>`,
-  },
-  {
-    id: "ai-vibe-coding",
-    name: "AI / Vibe Coding",
-    svg: `<svg viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg"><rect width="140" height="60" rx="12" fill="currentColor" opacity="0.08"/><text x="70" y="36" text-anchor="middle" dominant-baseline="middle" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="currentColor">AI / Vibe Coding</text></svg>`,
-  },
+export const tools: ToolData[] = [
+  { name: "Shopify", icon: { type: "simple", icon: siShopify } },
+  { name: "WordPress", icon: { type: "simple", icon: siWordpress } },
+  { name: "Wix", icon: { type: "simple", icon: siWix } },
+  { name: "Meta Ads", icon: { type: "simple", icon: siMeta } },
+  { name: "Google Analytics", icon: { type: "simple", icon: siGoogleanalytics } },
+  { name: "Claude Code", icon: { type: "simple", icon: siClaudecode } },
+  { name: "Google Merchant Center", icon: { type: "simple", icon: siGooglemarketingplatform } },
+  { name: "n8n", icon: { type: "simple", icon: siN8n } },
+  { name: "Razorpay", icon: { type: "simple", icon: siRazorpay } },
+  { name: "Codex", icon: { type: "lucide", icon: Code2 } },
+  { name: "Antigravity", icon: { type: "lucide", icon: Zap } },
+  { name: "Photoshop", icon: { type: "lucide", icon: Image } },
+  { name: "Canva", icon: { type: "lucide", icon: Palette } },
+  { name: "Pabbly", icon: { type: "lucide", icon: Box } },
+  { name: "GoHighLevel", icon: { type: "lucide", icon: TrendingUp } },
 ];

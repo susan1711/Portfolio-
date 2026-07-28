@@ -66,11 +66,11 @@ export function ComingSoon() {
               <span className="text-xs font-medium uppercase tracking-[0.1em] text-muted-foreground">
                 Current Progress
               </span>
-              <span className="font-heading text-lg font-semibold text-foreground">82%</span>
+              <span className="font-heading text-lg font-semibold text-foreground">90%</span>
             </div>
             <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-muted">
               <motion.div
-                animate={shouldReduceMotion ? { width: "82%" } : { width: "82%" }}
+                animate={shouldReduceMotion ? { width: "90%" } : { width: "90%" }}
                 className="h-full rounded-full bg-primary"
                 initial={{ width: "0%" }}
                 transition={{ duration: 1, delay: shouldReduceMotion ? 0 : 0.6, ease: [0.22, 1, 0.36, 1] }}
