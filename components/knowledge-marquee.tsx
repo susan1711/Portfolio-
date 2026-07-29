@@ -27,7 +27,7 @@ export function KnowledgeMarquee() {
   return (
     <div className="w-full">
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-8">
-        <div className="group relative overflow-x-hidden overflow-y-visible py-2"
+        <div className="group relative overflow-x-hidden overflow-y-hidden py-2"
               style={{ 
                 WebkitMaskImage:"linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
                 maskImage:"linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
