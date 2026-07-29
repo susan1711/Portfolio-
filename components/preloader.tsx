@@ -70,7 +70,7 @@ export function Preloader() {
       <div className="mt-8 w-48 sm:w-64">
         <div className="h-1 overflow-hidden rounded-full bg-secondary">
           <div
-            className="h-full rounded-full bg-primary transition-all duration-150 ease-out"
+            className="h-full rounded-full bg-primary"
             style={{ width: `${progress}%` }}
           />
         </div>

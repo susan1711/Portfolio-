@@ -6,7 +6,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowLeft, ArrowRight, ArrowUpRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -59,8 +59,13 @@ type FeaturedProjectsCarouselProps = {
 
 export function FeaturedProjectsCarousel({ projects }: FeaturedProjectsCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [erroredImages, setErroredImages] = useState<Set<string>>(new Set());
   const shouldReduceMotion = useReducedMotion();
   const isMobile = useIsMobile();
+
+  const handleImageError = useCallback((slug: string) => {
+    setErroredImages((prev) => new Set(prev).add(slug));
+  }, []);
 
   if (!projects || projects.length === 0) {
     return null;
@@ -118,9 +123,11 @@ export function FeaturedProjectsCarousel({ projects }: FeaturedProjectsCarouselP
                     : { duration: 0.5, ease: [0.22, 1, 0.36, 1] }
                 }
               >
-                {renderedProjects.map((project, index) => {
-                  const projectImage = isMobile && project.mobileImage ? project.mobileImage : project.image;
+                  {renderedProjects.map((project, index) => {
                   const isDuplicate = index >= total;
+                  const projectImage = isMobile && project.mobileImage && !erroredImages.has(project.slug)
+                    ? project.mobileImage
+                    : project.image;
                   return (
                     <div
                       className={`shrink-0 bg-card rounded-3xl border border-border${!isMobile ? " mx-4" : ""}`}
@@ -128,11 +135,12 @@ export function FeaturedProjectsCarousel({ projects }: FeaturedProjectsCarouselP
                       style={{ width: isMobile ? `${cardWidthPercent}%` : `calc(${cardWidthPercent}% - 32px)` }}
                     >
                       <div className="p-5 sm:p-6">
-                        <div className="aspect-[16/10] overflow-hidden rounded-2xl bg-muted lg:aspect-[16/9]">
+                        <div className={`aspect-[16/10] overflow-hidden bg-muted lg:aspect-[16/9] ${isMobile ? "rounded-xl" : "rounded-2xl"}`}>
                           <Image
                             alt={`${project.name} project preview`}
                             className="size-full object-cover"
                             height={900}
+                            onError={() => handleImageError(project.slug)}
                             src={projectImage}
                             width={1600}
                           />
