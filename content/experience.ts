@@ -22,7 +22,7 @@ export const experienceContent = {
       id: "freelance",
       type: "freelance" as const,
       role: "Shopify Developer",
-      duration: "Nov 2026 - present ( 7+ Months )",
+      duration: "Nov 2025 - present ( 7+ Months )",
       workType: "Freelance",
       companyType: "Freelance",
       description:
