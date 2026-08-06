@@ -54,7 +54,7 @@ export function Navigation() {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 px-3 pt-3 sm:px-5">
+    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
       <Container
         className={cn(
           "relative rounded-2xl border transition-[background-color,border-color,box-shadow] duration-300",

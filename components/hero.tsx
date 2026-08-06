@@ -22,7 +22,7 @@ export function Hero() {
       <div aria-hidden="true" className="glow-dot -bottom-48 -right-32 size-80 opacity-40 dark:opacity-30" />
 
       <Container
-        className="flex min-h-[calc(100svh-5.75rem)] items-center py-20 sm:py-24 lg:py-28"
+        className="flex min-h-svh items-center py-20 sm:py-24 lg:py-28"
         size="content"
       >
         <div className="grid w-full items-center gap-12 lg:grid-cols-[1.25fr_1fr] lg:gap-16 xl:gap-20">
